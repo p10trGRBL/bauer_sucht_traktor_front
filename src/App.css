@@ -1,39 +1,4 @@
 
 
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;  
-	border: 0;
-	font-size: 100%;
-	
-}
-
-
-
-
-.footer {
-  margin-top: 30px;
-}
-
-.logo {
-  width: 35vh;
-  height: auto;
-}
-.postList {
-  padding: 10rem;
-}
-
-.ui.card.singlePost {
-  margin-left: auto;
-  margin-right: auto;
-  width: 30vh;
-  height: auto;
-}
-.editButtons{
-  margin: auto;
-}
-
 
 

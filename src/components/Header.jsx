@@ -8,9 +8,9 @@ function Header() {
   let navigate = useNavigate();
   const handleClick = () => navigate("/create");
   const handleLogin = () => navigate("/login");
-  const handleProfile = ()=> navigate("/profile")
+  const handleProfile = () => navigate("/profile");
 
-  const {isLoggedIn, setIsLoggedIn} = useAuth();
+  const { isLoggedIn, setIsLoggedIn } = useAuth();
 
   const handleLogout = async () => {
     try {
@@ -24,49 +24,60 @@ function Header() {
   };
 
   return (
-    <div className="header w-full">
+    <div className="header w-full flex items-center justify-between border-b-4 border-[#FBBD08] bg-white sticky top-0 object-top z-10">
       <Link to="/">
         <img
-          className="logo"
+          className="p-0 ml-3 w-48 lg:w-56 hover:scale-90"
           src="https://images.ctfassets.net/i6i4u8iowebg/5Fj0I9dBrUwPOLxMyKgClr/2a3fd945cf6323f80932de4e1f4d638d/bauer_sucht_traktor.png"
         />
       </Link>
-      <br />
-      {isLoggedIn ? (
-        <div>
-          <Button
-            className="newTraktor"
-            content="Neuer Traktor!"
-            icon="add"
-            labelPosition="right"
-            basic
-            color="olive"
-            onClick={handleClick}
-          />
-          <button className="text-white" onClick={handleLogout}>
-            Abmelden
-          </button>
-          <button className="text-white" onClick={handleProfile}>
-            Profil
-          </button>
-        </div>
-      ) : (
-        <div>
-          <Button
-            className="newTraktor"
-            content="Neuer Traktor!"
-            icon="add"
-            labelPosition="right"
-            basic
-            color="grey"
-            onClick={handleClick}
-            disabled
-          />
-          <button className="text-white" onClick={handleLogin}>
-            Anmelden
-          </button>
-        </div>
-      )}
+      <div className="z-10">
+        {isLoggedIn ? (
+          <div className="space-x-2 mr-6">
+            <Button
+              className="newTraktor hover:scale-110"
+              content="Neuer Traktor!"
+              icon="add"
+              labelPosition="right"
+              basic
+              color="olive"
+              onClick={handleClick}
+            />
+            <button
+              className=" border-2 p-2 rounded-md border-[#E3001B] hover:scale-125 hover:mx-5 text-[#E3001B]"
+              onClick={handleLogout}
+            >
+              Abmelden
+            </button>
+            <button
+              className=" border-2 p-2 rounded-md border-[#FBBD08] hover:scale-125 hover:ml-3 text-[#FBBD08]"
+              onClick={handleProfile}
+            >
+              Profil
+            </button>
+          </div>
+        ) : (
+          <div className="z-10">
+            <Button
+              className="newTraktor"
+              content="Neuer Traktor!"
+              icon="add"
+              labelPosition="right"
+              basic
+              color="grey"
+              onClick={handleClick}
+              disabled
+            />
+            <button
+              className=" border-2 p-1.5 rounded-md border-[#A7BD0D] mr-6 hover:scale-125 hover:ml-3"
+              onClick={handleLogin}
+            >
+              <p className="text-[#A7BD0D] animate-pulse p-0 m-0">Anmelden</p>
+            </button>
+            <div></div>
+          </div>
+        )}
+      </div>
     </div>
   );
 }

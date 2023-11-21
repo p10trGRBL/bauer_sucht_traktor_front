@@ -30,15 +30,16 @@ function AllPosts() {
       speed={100}
       color='#36ad47'
       secondaryColor='rgba(0, 0, 0, 0.44)'
+
     />
     )
   }
 
   return (
 
-    <div className="pusher">
+    <div className="m-6">
       
-        <h1>Verfügbare Fahrzeuge:</h1>
+        <h1 className="text-center">Verfügbare Fahrzeuge:</h1>
         <div className="postList">
         <Card.Group itemsPerRow={1}>
         { !posts.length? ('...Die Schlepper werden verladen!') : 

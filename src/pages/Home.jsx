@@ -8,18 +8,18 @@ function Home() {
   const handleClick = () =>  navigate('/tractors')
 
   return (
-    <>
+    <div className=' border-2 border-black m-6'>
   
     <h1>AirBnB für Landmaschinen</h1>
     <br />
 
     <h2>Unsere Scheune ist voll! </h2>
     <h4>Check it out jetzt!</h4>
-    <Button className='newTraktor' content='Angebote anschauen'   color="olive" onClick={handleClick}/>
+    <Button className='hover:scale-125' content='Angebote anschauen'   color="olive" onClick={handleClick}/>
     <br />
 
   
-    </>
+    </div>
   )
 }
 
