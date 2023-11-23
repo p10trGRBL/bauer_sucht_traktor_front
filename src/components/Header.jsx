@@ -1,4 +1,4 @@
-import { Button } from "semantic-ui-react";
+import { Button, Icon } from "semantic-ui-react";
 import { useNavigate, Link } from "react-router-dom";
 import api from "../api/api.jsx";
 import { toast } from "react-toastify";
@@ -47,7 +47,8 @@ function Header() {
               className=" border-2 p-2 rounded-md border-[#E3001B] hover:scale-125 hover:mx-5 text-[#E3001B]"
               onClick={handleLogout}
             >
-              Abmelden
+              {" "}
+              <Icon name="power off" color="red" />
             </button>
             <button
               className=" border-2 p-2 rounded-md border-[#FBBD08] hover:scale-125 hover:ml-3 text-[#FBBD08]"

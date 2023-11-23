@@ -16,7 +16,7 @@ function Footer() {
     <Icon size ='big' name='twitter' color = 'yellow'onClick={handleX} className='hover:scale-125 hover:cursor-pointer'/>
     </div>
       
-      <span>Made with <Icon size='large' name='heart' color='red'/> in KA by P.GR <Link to='https://github.com/p10trGRBL' target='_blank'><Icon size='big' name='github' color ='yellow' className='hover:scale-125'/></Link>
+      <span>Made with <Icon size='large' name='heart' color='red'/> in KA by P.GR <Link to='https://github.com/p10trGRBL' target='_blank'><Icon size='big' name='github' color ='yellow' className='hover:scale-125 hover:animate-pulse'/></Link>
 
       </span>
       <p className='mr-6 text-black hover:cursor-pointer hover:text-yellow-500 hover:scale-125' onClick={handleLegal}>Rechtliches</p>
