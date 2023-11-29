@@ -24,10 +24,10 @@ function App() {
         <Route path="/login" element={<LoginForm />} />
         <Route path="/register" element={<RegistrationForm />} />
         <Route path="/profile" element={<Profile />} />
-        <Route path="tractors" element={<AllPosts />} />
-        <Route path="tractors/:id" element={<SinglePost />} />
-        <Route path="create" element={<CreateNew />} />
-        <Route path="update/:id" element={<EditPost />} />
+        <Route path="/tractors" element={<AllPosts />} />
+        <Route path="/tractors/:id" element={<SinglePost />} />
+        <Route path="/create" element={<CreateNew />} />
+        <Route path="/update/:id" element={<EditPost />} />
         <Route path= "*" element={<NotFound />} />
       </Routes>
       <Footer />
