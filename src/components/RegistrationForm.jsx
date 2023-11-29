@@ -34,7 +34,7 @@ function RegistrationForm() {
 
   return (
     <div className="relative">
-      <div className="bg-[url('./assets/bb_road.jpeg')] min-h-[75vh] bg-cover bg-center relative sepia"></div>
+      <div className="bg-[url('/bb_road.jpeg')] min-h-[75vh] bg-cover bg-center relative sepia"></div>
       <div className="absolute m-auto left-0 right-0 bottom-0 top-0  border-[1px] border-gray-300 w-2/3 h-100 md:w-1/3 md:h-5/6 lg:w-1/4 lg:h-2/3 backdrop-blur-md flex flex-col justify-center text-white rounded-md">
         <h1 className="text-center m-0 pt-10">Registriere Dich:</h1>
         <form onSubmit={handleSubmit} className="text-center p-10">

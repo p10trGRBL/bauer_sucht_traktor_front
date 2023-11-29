@@ -7,7 +7,7 @@ function Home() {
   const handleRegister = () => navigate("/register");
   return (
     <div>
-      <div className="bg-[url('./assets/bb_4tractors.jpg')] bg-cover bg-center bg-no-repeat min-h-[50vh] flex flex-col place-items-center justify-center ">
+      <div className="bg-[url('/bb_4tractors.jpg')] bg-cover bg-center bg-no-repeat min-h-[50vh] flex flex-col place-items-center justify-center ">
         <div className="backdrop-blur-md rounded-md  border-[1px] text-gray-300 p-20 text-center mb-16">
           <h1>Bauer sucht Traktor </h1>
           <h2>Dein AirBnB für Landmaschinen </h2>
@@ -43,7 +43,7 @@ function Home() {
         />
       </div>
 
-      <div className="bg-[url('./assets/bb_harvest.jpeg')] bg-cover bg-no-repeat min-h-screen bg-center bg-fixed flex flex-col justify-center">
+      <div className="bg-[url('/bb_harvest.jpeg')] bg-cover bg-no-repeat min-h-screen bg-center bg-fixed flex flex-col justify-center">
         <div className="m-20 p-20 text-center backdrop-blur-md rounded-md border-[1px] text-gray-800">
           <h2 className="mb-16">Vorteile für Mieter</h2>
           <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1">
@@ -142,7 +142,7 @@ function Home() {
               <p className="not-italic font-bold p-5">- Markus, begeisterter Landwirt und
               Trecker-Mieter</p>
             </span>
-            <img src="src/assets/bb_GetStoredImage.jpeg" alt="Fendt tractor" className="max-w-[640px] max-h-[480px]"/>
+            <img src="/bb_GetStoredImage.jpeg" alt="Fendt tractor" className="max-w-[640px] max-h-[480px]"/>
           </div>
           <div className="lg:flex lg:flex-row flex flex-col m-auto w-full sm:w-auto">
             <span className="max-w-[640px] max-h-[480px] my-8 md:my-16 lg:my-auto px-5 md:px-10 lg:text-2xl text-xl italic ">
@@ -152,7 +152,7 @@ function Home() {
               <p className="not-italic font-bold p-5">-
               Lisa, zufriedene Trecker-Mieterin</p>
             </span>
-            <img src="src/assets/bb_nikola.jpeg" alt="nikola" className="max-w-[640px] max-h-[480px]"/>
+            <img src="/bb_nikola.jpeg" alt="nikola" className="max-w-[640px] max-h-[480px]"/>
           </div>
           <div className="lg:flex lg:flex-row-reverse flex flex-col m-auto w-full sm:w-auto">
             <span className="max-w-[640px] max-h-[480px] my-8 md:my-16 lg:my-auto px-5 md:px-10 lg:text-2xl text-xl italic ">
@@ -162,7 +162,7 @@ function Home() {
               Zusammenarbeit mit anderen Landwirten in der Community war äußerst
               bereichernd." <p className="not-italic font-bold p-5">- Thomas, zufriedener Trecker-Vermieter</p>
             </span>
-            <img src="src/assets/bb_farmer.jpeg" alt="Farmer with tractor" className="lg:ml-10 max-w-[640px] max-h-[480px]"/>
+            <img src="/bb_farmer.jpeg" alt="Farmer with tractor" className="lg:ml-10 max-w-[640px] max-h-[480px]"/>
           </div>
         </div>
       </div>

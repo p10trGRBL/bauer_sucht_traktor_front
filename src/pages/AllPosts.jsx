@@ -32,7 +32,7 @@ function AllPosts() {
   }
 
   return (
-    <div className="bg-[url('./assets/bb_harvest.jpeg')] bg-cover bg-no-repeat pt-5 pb-5 bg-fixed">
+    <div className="bg-[url('/bb_harvest.jpeg')] bg-cover bg-no-repeat pt-5 pb-5 bg-fixed">
       <div className="">
         <h1 className="text-center mb-5 text-yellow-500">Verfügbare Fahrzeuge:</h1>
         <div className="w-1/3 m-auto">

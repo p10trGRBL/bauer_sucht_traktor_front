@@ -55,7 +55,7 @@ function SinglePost() {
 
   return (
     <div className="relative">
-      <div className="bg-[url('./assets/machine-shed.webp')] bg-cover bg-center min-h-[80vh] sepia contrast-50"> </div>
+      <div className="bg-[url('/machine-shed.webp')] bg-cover bg-center min-h-[80vh] sepia contrast-50"> </div>
 
      <div className="absolute xxl:top-[10vh] xl:top-[5vh] xl:left-[40vw] lg:top-[4vh] lg:left-[35vw] md:top-[2vh] md:left-[30vw] top-[1vh] left-[20vw]">
         <Card className="">

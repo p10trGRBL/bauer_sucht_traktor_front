@@ -33,7 +33,7 @@ function LoginForm() {
 
   return (
     <div className="relative">
-      <div className="bg-[url('./assets/bb_road.jpeg')] min-h-[75vh] bg-cover bg-center ">
+      <div className="bg-[url('/bb_road.jpeg')] min-h-[75vh] bg-cover bg-center ">
         {" "}
       </div>
       <div className="absolute m-auto left-0 right-0 bottom-0 top-0 border-[1px] border-gray-300 w-3/4 h-2/3 md:w-1/3 md:h-1/2 lg:w-1/4 backdrop-blur-md flex flex-col justify-center text-white rounded-md">
