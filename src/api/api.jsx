@@ -1,5 +1,6 @@
 import axios from "axios";
 
 export default axios.create({
-    baseURL: 'https://bauer-sucht-traktor.onrender.com'
+    baseURL: 'https://bauer-sucht-traktor.onrender.com',
+    withCredentials: true,
 });

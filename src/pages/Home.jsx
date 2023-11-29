@@ -20,12 +20,12 @@ function Home() {
             color="yellow"
             onClick={handleClick}
           />
-          <div className="text-white text-2xl absolute m-0 p-0 top-8 start-20 animate-ping">
+          <div className="text-white text-xl md:text-2xl absolute m-0 p-0 top-8 start-20 animate-ping">
             <Icon name="hand point up" />
           </div>
         </div>
       </div>
-      <div className="m-20 text-center text-2xl">
+      <div className="m-20 text-center text-lg sm:text-xl md:text-2xl">
         <h2 className="mb-8">Miete und vermiete Landmaschinen mühelos </h2>
         <div className="w-1/2 m-auto">
           Revolutioniere deine Landwirtschaftsbedürfnisse – Unsere Plattform
@@ -133,8 +133,8 @@ function Home() {
       <div className="text-center">
         <h2 className="pb-5 mb-10">Das sagen unsere Kunden: </h2>
         <div className="lg:grid lg:grid-cols-1 flex flex-col">
-          <div className="lg:flex lg:flex-row-reverse flex flex-col m-auto">
-            <span className="max-w-[640px] max-h-[480px] my-16 lg:my-auto px-10 lg:text-2xl text-xl italic">
+          <div className="lg:flex lg:flex-row-reverse flex flex-col m-auto w-full sm:w-auto">
+            <span className="max-w-[640px] max-h-[480px] my-8 md:my-16 lg:my-auto px-5 md:px-10 lg:text-2xl text-xl italic ">
               "Dank dieser Plattform konnte ich genau den Traktor finden, den
               ich für meine speziellen Anforderungen suchte. Die transparenten
               Preise und die unkomplizierte Abwicklung haben mich überzeugt.
@@ -144,8 +144,8 @@ function Home() {
             </span>
             <img src="src/assets/bb_GetStoredImage.jpeg" alt="Fendt tractor" className="max-w-[640px] max-h-[480px]"/>
           </div>
-          <div className="lg:flex lg:flex-row flex flex-col m-auto">
-            <span className="max-w-[640px] max-h-[480px] my-16 lg:my-auto px-10 lg:text-2xl text-xl italic">
+          <div className="lg:flex lg:flex-row flex flex-col m-auto w-full sm:w-auto">
+            <span className="max-w-[640px] max-h-[480px] my-8 md:my-16 lg:my-auto px-5 md:px-10 lg:text-2xl text-xl italic ">
               "Die einfache Buchung und die Vielfalt an verfügbaren Traktoren
               haben meine saisonalen Landwirtschaftsprojekte erheblich
               erleichtert. Top-Service, ich werde definitiv wiederkommen!" 
@@ -154,8 +154,8 @@ function Home() {
             </span>
             <img src="src/assets/bb_nikola.jpeg" alt="nikola" className="max-w-[640px] max-h-[480px]"/>
           </div>
-          <div className="lg:flex lg:flex-row-reverse flex flex-col m-auto">
-            <span className="max-w-[640px] max-h-[480px] my-16 lg:my-auto px-10 lg:text-2xl text-xl italic">
+          <div className="lg:flex lg:flex-row-reverse flex flex-col m-auto w-full sm:w-auto">
+            <span className="max-w-[640px] max-h-[480px] my-8 md:my-16 lg:my-auto px-5 md:px-10 lg:text-2xl text-xl italic ">
               "Als Landmaschinenbesitzer hat die Vermietung meiner Traktoren
               über diese Plattform nicht nur meine Einnahmen gesteigert, sondern
               mir auch geholfen, meine Ausrüstung optimal auszulasten. Die

@@ -32,11 +32,11 @@ function LoginForm() {
   };
 
   return (
-    <div>
-      <div className="bg-[url('./assets/bb_road.jpeg')] min-h-[75vh] bg-cover bg-center relative">
+    <div className="relative">
+      <div className="bg-[url('./assets/bb_road.jpeg')] min-h-[75vh] bg-cover bg-center ">
         {" "}
       </div>
-      <div className="absolute top-[30vh] start-[73vh] border-[1px] border-gray-300 w-1/4 h-1/3 backdrop-blur-md flex flex-col justify-center text-white rounded-md">
+      <div className="absolute m-auto left-0 right-0 bottom-0 top-0 border-[1px] border-gray-300 w-3/4 h-2/3 md:w-1/3 md:h-1/2 lg:w-1/4 backdrop-blur-md flex flex-col justify-center text-white rounded-md">
         <h1 className="text-center m-0 pt-10">Melde Dich an:</h1>
         {error && <p className="text-2xl font-semibold mb-4">{error}</p>}
         <form onSubmit={handleSubmit} className="text-center mt-10">

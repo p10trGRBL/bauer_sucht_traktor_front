@@ -70,7 +70,7 @@ function EditPost() {
       <div className="bg-[url('./assets/machine-shed.webp')] bg-cover bg-center min-h-[80vh] grayscale contrast-50 relative">
         {" "}
       </div>
-      <div className="absolute top-[20vh] start-[15vh] md:top-[20vh] md:start-[50vh] lg:top-[20vh] lg:start-[73vh] border-[1px] border-gray-300 w-2/3 md:w-1/3 md:h-2/3 backdrop-blur-md flex flex-col justify-center text-white rounded-md">
+      <div className="absolute m-auto left-0 right-0 bottom-0 top-0  border-[1px] border-gray-300 w-2/3 md:w-1/2 lg:w-1/3 h-5/6 md:h-2/3 backdrop-blur-md flex flex-col justify-center text-white rounded-md">
         <h3 className="text-center">Was möchtest du ändern?</h3>
         <div className="text-center text-lg">
           <form onSubmit={handleSubmit}>

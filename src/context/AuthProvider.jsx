@@ -30,11 +30,14 @@ export const AuthProvider = ({ children }) => {
     checkUser();
   }, []);
 
+  
+
   const value = {
     isLoggedIn,
     setIsLoggedIn,
     userData,
     setUserData,
+   
   };
 
   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>
