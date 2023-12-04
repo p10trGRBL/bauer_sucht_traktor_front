@@ -10,7 +10,7 @@ function Header() {
   const handleLogin = () => navigate("/login");
   const handleProfile = () => navigate("/profile");
 
-  const { isLoggedIn, setIsLoggedIn } = useAuth();
+  const { setUserData, isLoggedIn, setIsLoggedIn } = useAuth();
 
   const handleLogout = async () => {
     try {
@@ -18,6 +18,7 @@ function Header() {
       navigate("/");
       //window.location.reload();
       setIsLoggedIn(false);
+      setUserData({});
     } catch (error) {
       toast.error("Abmelden fehlgeschlagen");
     }
@@ -34,15 +35,17 @@ function Header() {
       <div className="z-10">
         {isLoggedIn ? (
           <div className="space-x-2 mr-6">
-            <Button
-              className="newTraktor hover:scale-110"
-              content="Neuer Traktor!"
-              icon="add"
-              labelPosition="right"
-              basic
-              color="olive"
-              onClick={handleClick}
-            />
+            <div className="hidden sm:inline">
+              <Button
+                className="newTraktor hover:scale-110 "
+                content="Neuer Traktor!"
+                icon="add"
+                labelPosition="right"
+                basic
+                color="olive"
+                onClick={handleClick}
+              />
+            </div>
             <button
               className=" border-2 p-2 rounded-md border-[#E3001B] hover:scale-125 hover:mx-5 text-[#E3001B]"
               onClick={handleLogout}
@@ -59,16 +62,20 @@ function Header() {
           </div>
         ) : (
           <div className="z-10">
-            <Button
-              className="newTraktor"
-              content="Neuer Traktor!"
-              icon="add"
-              labelPosition="right"
-              basic
-              color="grey"
-              onClick={handleClick}
-              disabled
-            />
+            <div className="hidden sm:inline">
+              <Button
+                content="Neuer Traktor!"
+                icon="add"
+                labelPosition="right"
+                basic
+                color="grey"
+                onClick={() =>
+                  toast.info(
+                    "Logge dich ein, um neue Fahrzeuge hinzufügen zu können!"
+                  )
+                }
+              />
+            </div>
             <button
               className=" border-2 p-1.5 rounded-md border-[#A7BD0D] mr-6 hover:scale-125 hover:ml-3"
               onClick={handleLogin}

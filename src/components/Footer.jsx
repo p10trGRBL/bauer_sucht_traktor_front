@@ -8,7 +8,7 @@ function Footer() {
   const handleX = ()=> window.alert("Hier geht's zum Elon's Sandbox");
   const handleLegal = () => window.alert("Die Website do iss bloß fer Bildungszwecke zamgebaut worre, dass de Leit e bissje Spaß hawwe unn a Lächeln uff de Lippe krije, wann se rumklicke. Alles, wat nach echte Leit, Firma oder so aussieht, iss gloof ich eh ned so gemeint gewese, des iss alles Zufall unn unbeabsichtigt.\n\nVersion für Juristen:\nDiese Website wurde ausschließlich zu Bildungszwecken erstellt, mit dem Ziel, Unterhaltung zu bieten und durch Klicken ein Lächeln zu erzeugen. Jegliche Ähnlichkeiten mit realen Personen, Unternehmen oder Artefakten der Popkultur sind rein zufällig und unbeabsichtigt.");
   return (
-    <div className='w-full h-36 large:h-48 flex items-center justify-between border-t-4 border-[#FBBD08] bg-white'>
+    <div className='w-full h-36 large:h-48 flex flex-col items-center sm:flex-row justify-between border-t-4 border-[#FBBD08] bg-white pt-3'>
        <div className='ml-6'>
      
     <Icon size='big'  name='instagram' color = 'yellow' onClick={handleInsta} className='hover:scale-125 hover:cursor-pointer'/>

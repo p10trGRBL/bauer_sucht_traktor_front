@@ -5,11 +5,14 @@ import { useNavigate, useParams, Link } from "react-router-dom";
 import { format } from "date-fns";
 import { nanoid } from "nanoid";
 import { SpinnerCircularFixed } from "spinners-react";
+import {toast} from "react-toastify";
+import { useAuth } from "../context/AuthProvider.jsx";
 
 function SinglePost() {
   const [post, setPost] = useState();
   const [loading, setLoading] = useState(true);
   const { id } = useParams();
+  const {userData, isLoggedIn } = useAuth();
   const navigate = useNavigate();
   let extrasArray = [];
   let tagsArray = [];
@@ -29,10 +32,11 @@ function SinglePost() {
   const handleDelete = async (id) => {
     try {
       await api.delete(`/tractors/${id}`);
-
+      toast.success("Fahrzeug storniert");
       navigate("/tractors");
     } catch (error) {
       console.error("Error deleting post:", error);
+      toast.error(error.response.data.message || "Sorry - etwas ist schief gelaufen :(")
     }
   };
 
@@ -48,16 +52,16 @@ function SinglePost() {
       />
     );
   }
-  console.log(post.extras);
-  console.log(post.tags);
+ 
   extrasArray = post.extras[0].split(",");
   tagsArray = post.tags[0].split(",");
-
+  //console.log(userData._id);
+  //console.log(post.owner._id)
   return (
     <div className="relative">
       <div className="bg-[url('/machine-shed.webp')] bg-cover bg-center min-h-[80vh] sepia contrast-50"> </div>
 
-     <div className="absolute xxl:top-[10vh] xl:top-[5vh] xl:left-[40vw] lg:top-[4vh] lg:left-[35vw] md:top-[2vh] md:left-[30vw] top-[1vh] left-[20vw]">
+     <div className="absolute xxl:top-[10vh] xl:top-[5vh] xl:left-[40vw] lg:top-[4vh] lg:left-[35vw] md:top-[2vh] md:left-[30vw] sm:top-[4vh] sm:left-[20vw] top-[5vh] left-[10vw]">
         <Card className="">
           <Image src={`${post.image_url}`} wrapped ui={false} />
           <Card.Content>
@@ -105,7 +109,8 @@ function SinglePost() {
             </Label.Group>
           </Card.Content>
           <Card.Content extra >
-            <div className="ui buttons">
+            {userData._id===post.owner._id?(
+              <div className="ui buttons">
               <Link to={`/update/${id}`}>
                 <Button basic color="red">
                   <Icon name="edit" />
@@ -121,6 +126,28 @@ function SinglePost() {
                 <Icon name="trash alternate" />
               </Button>
             </div>
+            ):(
+              <div className="ui buttons">
+             
+                <Button basic color="grey"
+                onClick={() => {
+                  toast.info("Nicht dein Fahrzeug! Melde dich an oder registriere dich, um Fahrzeuge hinzufügen zu können.");
+                }}>
+                  <Icon name="edit" />
+                </Button>
+             
+              <Button
+                basic color="grey"
+                onClick={() => {
+                  toast.info("Nicht dein Fahrzeug! Melde dich an oder registriere dich, um Fahrzeuge hinzufügen zu können.");
+                }}
+                
+              >
+                <Icon name="trash alternate" />
+              </Button>
+            </div>
+            )}
+            
           </Card.Content>
         </Card>
       </div>

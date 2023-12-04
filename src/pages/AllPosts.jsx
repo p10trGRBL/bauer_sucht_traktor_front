@@ -35,7 +35,7 @@ function AllPosts() {
     <div className="bg-[url('/bb_harvest.jpeg')] bg-cover bg-no-repeat pt-5 pb-5 bg-fixed">
       <div className="">
         <h1 className="text-center mb-5 text-yellow-500">Verfügbare Fahrzeuge:</h1>
-        <div className="w-1/3 m-auto">
+        <div className=" sm:w-2/3 md:w-1/2 lg:w-1/3 m-auto">
           <Card.Group itemsPerRow={1} className="backdrop-blur-xl">
             {!posts.length
               ? "...Die Schlepper werden verladen!"

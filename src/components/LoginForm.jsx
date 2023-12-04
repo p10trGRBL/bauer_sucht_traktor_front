@@ -22,12 +22,13 @@ function LoginForm() {
       );
 
       if (response.status === 200) navigate("/");
-      toast.success('Willkommen!')
+      toast.success("Willkommen!");
       //window.location.reload();
-      setIsLoggedIn(true);
+      setIsLoggedIn(true);  
     } catch (error) {
-      setError(error.response.data.error);
-      toast.error(error.response.data.error || "Login Data nicht korrekt :(");
+      
+      setError(error.response.data.message);
+      toast.error(error.response.data.message || "Login Data nicht korrekt :(");
     }
   };
 
@@ -41,10 +42,7 @@ function LoginForm() {
         {error && <p className="text-2xl font-semibold mb-4">{error}</p>}
         <form onSubmit={handleSubmit} className="text-center mt-10">
           <div className="mb-1">
-            <label 
-  className="mr-[25px]"
-            >
-              Email:</label>
+            <label className="mr-[25px]">Email:</label>
             <input
               type="text"
               placeholder="Deine Email Adresse"
@@ -64,12 +62,12 @@ function LoginForm() {
             />
           </div>
           <div className="pt-5">
-          <Button
-            className="hover:scale-125"
-            content="Los geht's!"
-            color="olive"
-            type="submit"
-          />
+            <Button
+              className="hover:scale-125"
+              content="Los geht's!"
+              color="olive"
+              type="submit"
+            />
           </div>
         </form>
 

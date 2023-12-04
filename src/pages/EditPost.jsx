@@ -4,6 +4,7 @@ import { useNavigate, useParams } from "react-router-dom";
 import { SpinnerDotted } from "spinners-react";
 import { Button } from "semantic-ui-react";
 import { format } from "date-fns";
+import { toast } from "react-toastify";
 
 function EditPost() {
   const { id } = useParams();
@@ -29,9 +30,11 @@ function EditPost() {
       try {
         const response = await api.get("/tractors/" + id);
         setPostData(response.data);
+
         setSending(false);
       } catch (error) {
         console.error(error);
+        error.response.data.message || "Sorry - etwas ist schief gelaufen :(";
       }
     };
     fetchPost();
@@ -46,10 +49,12 @@ function EditPost() {
       const response = await api.put("/tractors/" + id, postData);
 
       setSending(false);
+      toast.success("Änderungen gespeichert. Danke!");
       navigate("/tractors");
     } catch (error) {
       setSending(false);
       console.error(error);
+      error.response.data.message || "Sorry - etwas ist schief gelaufen :(";
     }
   };
 
@@ -70,9 +75,9 @@ function EditPost() {
       <div className="bg-[url('/machine-shed.webp')] bg-cover bg-center min-h-[80vh] grayscale contrast-50 relative">
         {" "}
       </div>
-      <div className="absolute m-auto left-0 right-0 bottom-0 top-0  border-[1px] border-gray-300 w-2/3 md:w-1/2 lg:w-1/3 h-5/6 md:h-2/3 backdrop-blur-md flex flex-col justify-center text-white rounded-md">
+      <div className="absolute m-auto left-0 right-0 bottom-0 top-0  border-[1px] border-gray-300 w-5/6 md:w-4/6 lg:w-1/3 h-4/6 md:h-2/3 backdrop-blur-md flex flex-col justify-center text-white rounded-md">
         <h3 className="text-center">Was möchtest du ändern?</h3>
-        <div className="text-center text-lg">
+        <div className="text-center sm:text-lg">
           <form onSubmit={handleSubmit}>
             <div className="mb-3">
               <label className="md:mr-[20px] lg:mr-[40px]">Hersteller:</label>
@@ -185,7 +190,9 @@ function EditPost() {
               />
             </div>
             <div>
-              <label className="md:mr-[8px] lg:mr-[16px]">Preis (€) pro Tag:</label>
+              <label className="md:mr-[8px] lg:mr-[16px]">
+                Preis (€) pro Tag:
+              </label>
               <input
                 type="text"
                 name="price"

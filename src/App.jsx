@@ -12,9 +12,11 @@ import Header from "./components/Header.jsx";
 import Footer from "./components/Footer.jsx";
 import LoginForm from "./components/LoginForm.jsx";
 import RegistrationForm from "./components/RegistrationForm.jsx";
-import Profile from "./components/Profile.jsx"
+import Profile from "./components/Profile.jsx";
+import { useAuth } from "./context/AuthProvider.jsx";
 
 function App() {
+  const { isLoggedIn } = useAuth();
   return (
     <>
       <ToastContainer />
@@ -23,12 +25,12 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<LoginForm />} />
         <Route path="/register" element={<RegistrationForm />} />
-        <Route path="/profile" element={<Profile />} />
+        <Route path="/profile" element={<Profile key={isLoggedIn} />} />
         <Route path="/tractors" element={<AllPosts />} />
         <Route path="/tractors/:id" element={<SinglePost />} />
         <Route path="/create" element={<CreateNew />} />
         <Route path="/update/:id" element={<EditPost />} />
-        <Route path= "*" element={<NotFound />} />
+        <Route path="*" element={<NotFound />} />
       </Routes>
       <Footer />
     </>

@@ -10,6 +10,7 @@ export const useAuth = () => {
 export const AuthProvider = ({ children }) => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [userData, setUserData] = useState({});
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     const checkUser = async () => {
@@ -25,18 +26,21 @@ export const AuthProvider = ({ children }) => {
       } catch (error) {
         setIsLoggedIn(false);
         setUserData({});
+      } finally {
+        setIsLoading(false);
       }
     };
     checkUser();
-  }, []);
+  }, [isLoggedIn]);
 
-  
+ 
 
   const value = {
     isLoggedIn,
     setIsLoggedIn,
     userData,
     setUserData,
+    isLoading,
    
   };
 

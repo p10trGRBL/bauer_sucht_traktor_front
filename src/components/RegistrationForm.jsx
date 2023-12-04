@@ -2,7 +2,7 @@ import { useState } from "react";
 import api from "../api/api";
 import { Link, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
-import {Button} from 'semantic-ui-react';
+import { Button } from "semantic-ui-react";
 
 function RegistrationForm() {
   const [firstName, setFirstName] = useState("");
@@ -10,6 +10,7 @@ function RegistrationForm() {
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [error, setError] = useState("");
   const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
@@ -21,13 +22,15 @@ function RegistrationForm() {
         { withCredentials: true }
       );
 
-      if (response.status===200) {
+      if (response.status === 200) {
         toast.success("Registrierung erfolgreich. Herzlich willkommen!");
         navigate("/login");
       }
     } catch (error) {
+      
+      setError(error.response.data.message);
       toast.error(
-        error.response.data.error || "Registrierung schiefgelaufen :("
+        error.response.data.message || "Registrierung schiefgelaufen :("
       );
     }
   };
@@ -35,9 +38,9 @@ function RegistrationForm() {
   return (
     <div className="relative">
       <div className="bg-[url('/bb_road.jpeg')] min-h-[75vh] bg-cover bg-center relative sepia"></div>
-      <div className="absolute m-auto left-0 right-0 bottom-0 top-0  border-[1px] border-gray-300 w-2/3 h-100 md:w-1/3 md:h-5/6 lg:w-1/4 lg:h-2/3 backdrop-blur-md flex flex-col justify-center text-white rounded-md">
-        <h1 className="text-center m-0 pt-10">Registriere Dich:</h1>
-        <form onSubmit={handleSubmit} className="text-center p-10">
+      <div className="absolute m-auto left-0 right-0 bottom-0 top-0  border-[1px] border-gray-300 w-5/6 h-5/6 md:w-2/3 lg:w-1/2 xl:w-1/3 lg:h-2/3 backdrop-blur-md flex flex-col justify-center text-white rounded-md">
+        <h1 className="text-center pt-5 md:pt-10">Registriere Dich:</h1>
+        <form onSubmit={handleSubmit} className="text-center md:p-10">
           <div className="mb-1">
             <label className="mr-[54px]">Name:</label>
             <input
@@ -94,18 +97,19 @@ function RegistrationForm() {
             />
           </div>
           <div className="pt-10">
-          <Button
-            className="hover:scale-125"
-            content="Registrieren"
-            color="olive"
-            type="submit"
-          />
+            <Button
+              className="hover:scale-125"
+              content="Registrieren"
+              color="olive"
+              type="submit"
+            />
           </div>
-        
         </form>
         <div className="flex justify-end mt-10 pt-10">
-        <p className="text-black">Schon registriert? Melde dich an:</p>
-        <Link to="/login" className="mx-5">Anmelden</Link>{" "}
+          <p className="text-black">Schon registriert? Melde dich an:</p>
+          <Link to="/login" className="mx-5">
+            Anmelden
+          </Link>{" "}
         </div>
       </div>
     </div>

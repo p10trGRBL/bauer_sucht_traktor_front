@@ -1,9 +1,11 @@
 import api from "../api/api";
+
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { SpinnerDotted } from "spinners-react";
 import { Button } from "semantic-ui-react";
-import {format} from "date-fns";
+import { format } from "date-fns";
+import { toast } from "react-toastify";
 
 function CreateNew() {
   const [postData, setPostData] = useState({
@@ -21,6 +23,7 @@ function CreateNew() {
     publishedDate: "",
   });
   const [sending, setSending] = useState(false);
+ 
 
   const navigate = useNavigate();
 
@@ -47,8 +50,12 @@ function CreateNew() {
       setSending(false);
       navigate("/");
     } catch (error) {
+     
       setSending(false);
-      console.error(error);
+      
+      toast.error(
+        error.response.data.message || "Sorry - etwas ist schief gelaufen :("
+      );
     }
   };
 
@@ -67,10 +74,10 @@ function CreateNew() {
   return (
     <div>
       <div className="bg-[url('/machine-shed.webp')] bg-cover bg-center min-h-[80vh]  contrast-50 relative"></div>
-      <div className="absolute m-auto left-0 right-0 bottom-0 top-0  border-[1px] border-gray-300 w-2/3 md:w-1/2 lg:w-1/3 h-5/6 md:h-2/3 backdrop-blur-md flex flex-col justify-center text-white rounded-md">
+      <div className="absolute m-auto left-0 right-0 bottom-0 top-0  border-[1px] border-gray-300 w-5/6 md:w-4/6 lg:w-1/3 h-4/6 md:h-2/3 backdrop-blur-md flex flex-col justify-center text-white rounded-md">
         <h3 className="text-center">Füge deinen Schlepper hinzu!</h3>
-        <div className="text-center text-lg">
-        <form onSubmit={handleSubmit}>
+        <div className="text-center text-md md:text-lg">
+          <form onSubmit={handleSubmit}>
             <div className="mb-3">
               <label className="md:mr-[20px] lg:mr-[40px]">Hersteller:</label>
               <input
@@ -182,7 +189,9 @@ function CreateNew() {
               />
             </div>
             <div>
-              <label className="md:mr-[8px] lg:mr-[16px]">Preis (€) pro Tag:</label>
+              <label className="md:mr-[8px] lg:mr-[16px]">
+                Preis (€) pro Tag:
+              </label>
               <input
                 type="text"
                 name="price"
