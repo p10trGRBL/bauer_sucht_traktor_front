@@ -19,6 +19,7 @@ function Header() {
       //window.location.reload();
       setIsLoggedIn(false);
       setUserData({});
+      toast.info("Abmeldung erfolgreich");
     } catch (error) {
       toast.error("Abmelden fehlgeschlagen");
     }
